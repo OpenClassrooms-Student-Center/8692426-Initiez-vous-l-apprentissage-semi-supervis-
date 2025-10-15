@@ -56,30 +56,30 @@ Pour les questions posées de votre point de vue d'expert, n'utilisez pas cette 
 | Pour plus d’informations, vous pouvez consulter cette page : [Conseils de rédaction du cours](https://openclassrooms.notion.site/R-daction-du-cours-5bdf2035acdf481480934da87c998853) |
 | :---- |
 
-**1500 mots maximum** par chapitre (Pour compter les mots du Google Doc : sélectionner le chapitre concerné puis cliquer sur outil \> nombre de mot ; une fenêtre s’ouvre et affiche le nombre sélectionné sur le total de mot du document.
+**1500 mots maximum** par chapitre (Pour compter les mots du Google Doc : sélectionner le chapitre concerné puis cliquer sur outil \> nombre de mot ; une fenêtre s’ouvre et affiche le nombre sélectionné sur le total de mot du document. 📊
 
 # **Introduction**
 
-###### \#TLK \- Teaser 
+###### #TLK - Teaser 
 
-Les données brutes existent en masse. Or, la plupart de ces données n'est pas labellisée. Comment entraîner une IA dans ces conditions ?
+Les données brutes existent en masse. Or, la plupart de ces données n'est pas labellisée. Comment entraîner une IA dans ces conditions ? 🤔
 
-C’est exactement le défi des data scientists aujourd'hui. Les données ? Abondantes. Mais les annotations sont rares et coûteuses : il faut du temps, de la précision et de l'expertise pour les ajouter.
+C’est exactement le défi des data scientists aujourd'hui. Les données ? Abondantes. Mais les annotations sont rares et coûteuses : il faut du temps, de la précision et de l'expertise pour les ajouter. ⏱️💸
 
-C'est là qu'entre en jeu l’**apprentissage semi-supervisé** ou SSL (*Semi Supervised Learning* en anglais).
+C'est là qu'entre en jeu l’**apprentissage semi-supervisé** ou SSL (*Semi Supervised Learning* en anglais). 🚀
 
-Entre le tout-étiqueté du supervisé et le zéro-étiquette du non supervisé, le semi-supervisé utilise les deux : il apprend à partir d’un petit échantillon bien annoté… pour mieux exploiter la masse restante.
+Entre le tout-étiqueté du supervisé et le zéro-étiquette du non supervisé, le semi-supervisé utilise les deux : il apprend à partir d’un petit échantillon bien annoté… pour mieux exploiter la masse restante. ⚖️🧠
 
-Résultat ? Moins d’étiquettes, mais des modèles puissants, capables d’analyser des images médicales avec précision.
+Résultat ? Moins d’étiquettes, mais des modèles puissants, capables d’analyser des images médicales avec précision. 🎯
 
-Dans ce cours, vous construirez un modèle de segmentation semi-supervisé pour analyser des images radiologiques.
+Dans ce cours, vous construirez un modèle de segmentation semi-supervisé pour analyser des images radiologiques. 🩻
 
-Envie de plonger au cœur de l’IA, même quand elle n’a pas toutes les réponses ? Commencez le cours dès maintenant \!
+Envie de plonger au cœur de l’IA, même quand elle n’a pas toutes les réponses ? Commencez le cours dès maintenant ! 🏊‍♀️🤖
 
-**Prérequis, outils :** 
+ **Prérequis, outils :** 
 
-Pour suivre ce cours, vous devez être familier avec le concept de “propagation de labels” et vous aurez besoin de maîtriser ces outils : 
-
+Pour suivre ce cours, vous devez être à l’aise avec Python et les bases du machine learning (classification, sur‑apprentissage, métriques), et vous aurez besoin de maîtriser ces outils : 
+//bleu clair 3//
 * [scikit-learn](https://scikit-learn.org/stable/)  
 * [TensorFlow](https://www.tensorflow.org/?hl=fr)  
 * [PyTorch](https://pytorch.org/)  
@@ -97,14 +97,34 @@ Par ailleurs, avant de vous lancer dans l’apprentissage semi-supervisé, il es
 
 ### P1C1 : Tirez un maximum de ce cours
 
+> Email — Emma (PM)
+>
+> Objet: Kick-off Hackathon MedTech (48h)
+>
+> Bonjour l'équipe,
+>
+> Notre défi: livrer un POC d’aide au tri dermatologique en 48h. Beaucoup d’images, peu d’annotations. Objectif: une démo fluide avec des métriques crédibles (AUC/F1) et une narration claire. On priorise des incréments à fort impact, reproductibles et présentables. Go!
+>
+//bleu clair 3//
+**Brief produit (extrait documentation projet)**
+- Problème: peu de labels, masse d’images à trier.
+- Contraintes: temps, budget, sécurité patient.
+- Critères de succès: uplift mesurable + démo stable.
+- Approche: SSL (pseudo-labeling, graphes, cohérence, SGAN en option).
+
+//orange clair 3//
+**Note clinique — Dr Malik**
+- Classes sensibles: erreurs coûteuses (fausses rassurances).
+- Exigences: transparence, calibration, pilotage par seuils.
+
 #### Découvrez l’objectif du cours
 
-Dans ce cours, vous allez comprendre quand et pourquoi utiliser l’apprentissage semi-supervisé (SSL) et apprendre à l’implémenter en Python pour des problèmes d’imagerie médicale. À la fin, vous saurez :
+Dans ce cours, vous allez comprendre quand et pourquoi utiliser l’apprentissage semi-supervisé (SSL) et apprendre à l’implémenter en Python pour des problèmes d’imagerie médicale. À la fin, vous saurez : 😎
 
-- Identifier les situations où les labels manquent et où le SSL apporte un gain concret.
-- Mettre en place un pipeline de pseudo-labeling avec PyTorch.
-- Exploiter la structure des données via la propagation d’étiquettes sur graphe.
-- Comprendre le principe des SGANs et de la régularisation par cohérence pour stabiliser les prédictions.
+- Identifier les situations où les labels manquent et où le SSL apporte un gain concret. 🔍
+- Mettre en place un pipeline de pseudo-labeling avec PyTorch. 🧪
+- Exploiter la structure des données via la propagation d’étiquettes sur graphe. 🕸️
+- Comprendre le principe des SGANs et de la régularisation par cohérence pour stabiliser les prédictions. 🧘‍♂️
 
 #### Rencontrez votre professeur
 
@@ -114,7 +134,7 @@ Expert en analyse de données, Aurélien Quillet a commencé sa carrière en dé
 
 #### Découvrez le fonctionnement du cours
 
-Connaissez-vous le principe d'un cours en ligne sur OpenClassrooms ? Ce cours suit une progression logique que l'on a séquencée en plusieurs chapitres, qu'il est préférable de suivre dans l'ordre.
+Connaissez-vous le principe d'un cours en ligne sur OpenClassrooms ? Ce cours suit une progression logique que l'on a séquencée en plusieurs chapitres, qu'il est préférable de suivre dans l'ordre. 📚
 
 Dans ces chapitres, vous trouverez :
 
@@ -123,9 +143,9 @@ Dans ces chapitres, vous trouverez :
 
 Les sections "À vous de jouer" sont l'occasion de mettre en pratique ; c’est là que vous suivrez notamment les démonstrations en vidéo et que vous pourrez reproduire.
 
-À la fin du cours, vous trouverez un **quiz** pour vous permettre de valider ce que vous avez appris.
+À la fin du cours, vous trouverez un **quiz** pour vous permettre de valider ce que vous avez appris. 🧪✅
 
-Certains blocs de code contiennent des **lignes tronquées**. Pas d'inquiétude, il n'y a pas d'erreurs. Si vous cliquez sur le bloc de code en question, l'intégralité de celui-ci apparaîtra correctement.
+Certains blocs de code contiennent des **lignes tronquées**. Pas d'inquiétude, il n'y a pas d'erreurs. Si vous cliquez sur le bloc de code en question, l'intégralité de celui-ci apparaîtra correctement. 💡
 
 Avant de démarrer, voici quelques conseils pour exploiter au mieux le contenu de ce cours et **optimiser votre apprentissage** :
 
@@ -133,36 +153,53 @@ Avant de démarrer, voici quelques conseils pour exploiter au mieux le contenu d
 2. Suivez les démonstrations pour savoir **comment** vous pouvez mettre en œuvre ces concepts.  
 3. Profitez de chaque occasion de pratiquer en faisant une pause dans le cours, pour vous entraîner de votre côté et reproduire pas à pas ce que vous avez appris.
 
-#### Découvrez le projet fil rouge du cours
+#### Découvrez le projet fil rouge du cours 🧵
 
 Tout au long du cours, vous allez mettre en place des techniques semi-supervisées sur un dataset médical standardisé. Nous utiliserons `DermaMNIST` (famille MedMNIST) pour illustrer la classification avec peu d’images étiquetées et un grand volume non étiqueté. Vous pourrez ensuite transposer ces techniques à un contexte de segmentation radiologique.
 
-#### Téléchargez la fiche résumé du cours 
+#### Téléchargez la fiche résumé du cours 📝
 
 COURSE SUMMARY  
 
-*Écrivez ici une phrase de transition pour présenter le prochain chapitre \!* 
+*Prêt à démarrer ? On pose les bases du semi‑supervisé juste après 🧭* 
 
-### P1C2  : Découvrez le principe de l’apprentissage semi supervisé
+### P1C2  : Découvrez le principe de l’apprentissage semi supervisé 🧭
+
+//bleu clair 3//
+**Note technique (panorama SSL)**
+- Pseudo‑labeling: rapide, simple, sensible au seuil.
+- Graphes (LabelSpreading): exploite la structure globale.
+- Cohérence (Mean Teacher / UDA / FixMatch): stabilité et calibration.
+- SGAN: renforce le discriminateur via une classe supplémentaire (K+1).
+
+//gris clair 2//
+**Decision log #1**
+- Décision: démarrer par pseudo‑labeling pour un gain rapide.
+- Prévoir LabelSpreading pour capturer la structure.
+- Garder SGAN pour un effet différenciant si timing OK.
+- Justification: coût/valeur/risques au format hackathon.
+
+//orange clair 3//
+**Alerte**: calibration et fuite d’info. Toujours valider sur un test set tenu à l’écart.
 
 #### Rappelez-vous des principes du supervisé vs non supervisé
 
-Le supervisé apprend à partir de paires `(x, y)` et nécessite beaucoup d’annotations. Le non supervisé apprend des structures sans étiquettes. Le semi-supervisé combine un petit ensemble annoté avec un large ensemble non annoté pour améliorer la généralisation à moindre coût.
+Le supervisé apprend à partir de paires `(x, y)` et nécessite beaucoup d’annotations. Le non supervisé apprend des structures sans étiquettes. Le semi-supervisé combine un petit ensemble annoté avec un large ensemble non annoté pour améliorer la généralisation à moindre coût. ⚙️
 
 //orange clair 3//
-**Point de vigilance**: les erreurs de pseudo-labels peuvent se propager. Gardez des seuils de confiance et évaluez régulièrement sur un jeu de test labellisé.
+**Point de vigilance**: les erreurs de pseudo-labels peuvent se propager. Gardez des seuils de confiance et évaluez régulièrement sur un jeu de test labellisé. ⚠️
 
 #### Comprenez l’intérêt de l’apprentissage semi-supervisé
 
-- Réduire le coût d’annotation (experts rares en médical).
-- Mieux exploiter la masse de données disponibles en production.
-- Améliorer la robustesse et la calibration des modèles quand les labels sont bruyants ou partiels.
+- Réduire le coût d’annotation (experts rares en médical). 💸
+- Mieux exploiter la masse de données disponibles en production. 📈
+- Améliorer la robustesse et la calibration des modèles quand les labels sont bruyants ou partiels. 🛡️
 
 #### Comprenez les principes fondamentaux du semi-supervisé
 
-- Pseudo-labeling: utiliser les prédictions les plus confiantes comme labels temporaires.
-- Méthodes par graphe: propager l’information des nœuds labellisés vers leurs voisins dans un espace de similarité.
-- Régularisation par cohérence: forcer des prédictions stables malgré de petites perturbations (Mean Teacher, UDA).
+- Pseudo-labeling: utiliser les prédictions les plus confiantes comme labels temporaires. 🏷️
+- Méthodes par graphe: propager l’information des nœuds labellisés vers leurs voisins dans un espace de similarité. 🕸️
+- Régularisation par cohérence: forcer des prédictions stables malgré de petites perturbations (Mean Teacher, UDA). 🔁
 
 #### En résumé 
 
@@ -170,13 +207,34 @@ Le supervisé apprend à partir de paires `(x, y)` et nécessite beaucoup d’an
 * Des seuils et une évaluation continue sont indispensables.
 * Plusieurs familles de méthodes existent et sont complémentaires.
 
-*Dans le prochain chapitre, vous verrez comment implémenter pas à pas le pseudo-labeling en PyTorch.* 
+*Dans le prochain chapitre, vous verrez comment implémenter pas à pas le pseudo-labeling en PyTorch.* 👉
 
-### P1C3 : Catégorisez l’inconnu avec la pseudo labellisation
+### P1C3 : Catégorisez l’inconnu avec la pseudo labellisation 🧪
+
+//bleu clair 3//
+**Playbook — Pseudo‑labeling (documentation projet)**
+1. Entraîner un modèle de base sur peu de labels.
+2. Prédire sur non étiquetées + softmax.
+3. Sélectionner au‑dessus d’un seuil (confiance/écart top‑1 vs top‑2).
+4. Ajouter ces exemples à l’entraînement.
+5. Réentraîner, surveiller AUC/F1.
+
+> Email — Emma
+>
+> Point intermédiaire: priorité à un uplift tangible, pas de sur‑promesse. Partagez vos seuils et décisions dans la doc.
+
+//orange clair 3//
+**Alerte**: biais de confirmation. Un seuil trop bas inonde de bruit.
+
+//gris clair 2//
+**Decision log #2**
+- Seuil initial: 0.90
+- Itérations: 5
+- Arrêt: si plus de candidats au‑dessus du seuil.
 
 #### Établissez des prédictions fiables (Principe et algorithme)
 
-Le pseudo-labeling consiste à prédire sur les données non étiquetées, sélectionner les prédictions au-dessus d’un seuil de confiance, les ajouter à l’entraînement comme labels temporaires, puis réentraîner le modèle.
+Le pseudo-labeling consiste à prédire sur les données non étiquetées, sélectionner les prédictions au-dessus d’un seuil de confiance, les ajouter à l’entraînement comme labels temporaires, puis réentraîner le modèle. C’est la version « coach confiant » de l’apprentissage. 💬💪
 
 ```python
 # Imports et préparation (PyTorch, MedMNIST)
@@ -264,14 +322,14 @@ for it in range(5):
 ```
 
 //rouge clair 3//
-**Erreur classique**: baisser trop le seuil introduit du bruit et dégrade les performances.
+**Erreur classique**: baisser trop le seuil introduit du bruit et dégrade les performances. 🧯
 
 #### Comprenez les avantages et les pièges du pseudo-labeling
 
 - Avantages: simple, exploite immédiatement les données non étiquetées.
 - Pièges: propagation d’erreurs, biais de confirmation, sensibilité au seuil et à la calibration.
 
-#### À vous de jouer
+#### À vous de jouer 🎯
 
 Définissez les critères (métriques et seuils) pour décider si un pseudo-label est suffisamment fiable (ex. seuil de probabilité, marge top-1/top-2, calibration préalable) et justifiez vos choix.
 
@@ -281,11 +339,32 @@ Définissez les critères (métriques et seuils) pour décider si un pseudo-labe
 * La sélection par confiance et la calibration sont cruciales.
 * Réentraînez par itérations en surveillant les métriques de test.
 
-### P1C4 : Modélisez les relations entre différentes entités
+*Et si vos images se donnaient des tuyaux entre voisines ? Place aux graphes 🕸️*
+
+### P1C4 : Modélisez les relations entre différentes entités 🕸️
+
+//bleu clair 3//
+**Note technique — Graphes et propagation**
+- Embeddings via CNN (features): compacter l’information.
+- Graphe k‑NN: relier les images proches.
+- LabelSpreading: diffuser les labels connus vers les voisins.
+
+//bleu clair 3//
+**“Diagramme” (texte)**
+- Nœuds = images, Arêtes = similarités
+- Sources = labels connus → diffusion → labels pour les autres nœuds
+
+//orange clair 3//
+**Alerte**: embeddings faibles → propagation médiocre. Soignez l’extraction.
+
+//gris clair 2//
+**Decision log #3**
+- Paramètres initiaux: k=10, kernel=knn
+- Évaluation: AUC (OvR) + F1 macro sur non étiquetées
 
 #### Découvrez le principe d’un graphe
 
-On construit un graphe de similarité entre images (nœuds) et on propage l’information des quelques nœuds labellisés vers les autres.
+On construit un graphe de similarité entre images (nœuds) et on propage l’information des quelques nœuds labellisés vers les autres. La sagesse des voisins au service de la prédiction ! 🧑‍🤝‍🧑
 
 #### Propagez des labels aux nœuds non labellisés
 
@@ -323,11 +402,32 @@ Implémentez `LabelSpreading` sur vos données, puis évaluez la qualité de l�
 
 #### En résumé 
 
-* Les graphes exploitent la structure globale des données.
-* De bons embeddings améliorent fortement les résultats.
-* Validez sur des labels tenus à l’écart pour éviter la fuite d’information.
+* Les graphes exploitent la structure globale des données. 🌐
+* De bons embeddings améliorent fortement les résultats. 💪
+* Validez sur des labels tenus à l’écart pour éviter la fuite d’information. 🔒
 
-### P1C5 : Classifiez des données non-étiquetées avec un générateur et un discriminateur
+*Envie d'apprendre en jouant au chat et à la souris ? Direction les GANs 🎭*
+
+### P1C5 : Classifiez des données non-étiquetées avec un générateur et un discriminateur 🎭
+
+//bleu clair 3//
+**Brief produit — SGAN**
+- But: enrichir la représentation; D devient classificateur K+1.
+- Données: étiquetées (supervisé), non étiquetées (réel), générées (faux).
+
+//bleu clair 3//
+**Note technique**
+- D: K classes réelles + 1 “faux”.
+- G: générer des “vraies‑semblances”.
+- Risques: instabilité; monitorer pertes.
+
+//bleu clair 3//
+**Checklist QA — Hugo (MLOps)**
+- Versionner seeds, checkpoints, courbes de pertes.
+- Conserver un plan B (arrêt anticipé si instable).
+
+//orange clair 3//
+**Alerte**: n’investissez pas tout le temps ici si l’entraînement diverge. Priorité à une démo stable.
 
 #### Découvrez le fonctionnement du générateur et du discriminateur (rappel GAN)
 
@@ -340,7 +440,7 @@ Un GAN oppose un Générateur (G) qui synthétise des images à un Discriminateu
 - Images générées: D doit prédire la classe K (fausse).
 - G cherche à produire des images que D classe comme réelles (0..K−1).
 
-#### Utilisez des SGANs
+#### Utilisez des SGANs 🤝
 
 Stratégie pratique: réutilisez votre pipeline de chargement (`labeled_loader`, `unlabeled_loader`) et entraînez D avec des têtes adaptées (`K+1` sorties). Évaluez D comme classificateur sur le test set et comparez aux méthodes précédentes.
 
@@ -354,11 +454,30 @@ Recherchez un exemple SGAN sur images médicales. Identifiez les composants clé
 * Le discriminateur devient un classificateur amélioré avec `K+1` classes.
 * La stabilité d’entraînement et la qualité des images générées sont critiques.
 
-### P1C6 : Maintenez des prédictions stables avec la régularisation par cohérence
+*Stabilisons tout ça avec un peu de zen : la cohérence arrive 🔁*
+
+### P1C6 : Maintenez des prédictions stables avec la régularisation par cohérence 🔁
+
+//bleu clair 3//
+**Playbook — Régularisation par cohérence**
+- Vues faibles/fortes: mêmes labels attendus.
+- Augmentations réalistes: rotations légères, contrastes.
+- Seuil de confiance: générer des pseudo‑labels pour vues faibles (esprit FixMatch).
+
+//bleu clair 3//
+**Note clinique — Dr Malik**
+- Éviter les transformations non plausibles en dermato.
+- Viser une robustesse “démo‑proof”.
+
+//bleu clair 3//
+**Checklist démo**
+- Latence acceptable
+- Prédictions stables à perturbations mineures
+- Visualisations lisibles pour le pitch
 
 #### Comprenez le principe de la régularisation par cohérence
 
-Objectif: des prédictions stables quand on applique de petites perturbations (augmentations) aux entrées. Exemples: Mean Teacher, UDA/FixMatch (consistance forte/faible).
+Objectif: des prédictions stables quand on applique de petites perturbations (augmentations) aux entrées. Exemples: Mean Teacher, UDA/FixMatch (consistance forte/faible). 🧘‍♀️
 
 #### Découvrez un cas d’usage
 
@@ -376,36 +495,48 @@ Imaginez un pipeline de régularisation par cohérence adapté à vos images (ty
 
 #### En résumé 
 
-* La cohérence réduit le sur-apprentissage et améliore la calibration.
-* Combinez cohérence + pseudo-labeling pour de meilleurs résultats.
-* Choisissez des augmentations réalistes par rapport au domaine.
+* La cohérence réduit le sur-apprentissage et améliore la calibration. 🎛️
+* Combinez cohérence + pseudo-labeling pour de meilleurs résultats. 🧩
+* Choisissez des augmentations réalistes par rapport au domaine. 🖼️
 
-### P1C7 : Allez plus loin
+*Prêt pour le niveau expert ? On passe à la vitesse supérieure 🚀*
+
+### P1C7 : Allez plus loin 🚀
+
+> Email — Emma → stakeholders
+>
+> Objet: Démo POC — Synthèse et prochaines étapes
+>
+> Bonjour,
+>
+> Le POC d’aide au tri dermatologique est prêt pour la démo: résultats consolidés, documentation de nos décisions (thresholds, propagation, cohérence), et risques identifiés. Nous proposons une roadmap: améliorer les embeddings, intégrer FixMatch/FlexMatch, et cadrer une validation clinique.
+>
+//bleu clair 3//
+**Documentation projet — Sommaire**
+- Briefs produits
+- Notes techniques (SSL, graphes, cohérence, SGAN)
+- Decision logs (#1–#3)
+- Checklists (QA, démo)
+- Alerte & vigilance clinique
 
 [TLK]
 
 #### Techniques avancées
 
-- FixMatch/FlexMatch: pseudo-labels à haute confiance + consistance forte/faible.
-- Self-training avec calibration et stratégies d’échantillonnage par incertitude.
-- Meilleurs extracteurs: ResNet/ViT pré-entraînés pour des embeddings plus discriminants.
+- FixMatch/FlexMatch: pseudo-labels à haute confiance + consistance forte/faible. 🧱
+- Self-training avec calibration et stratégies d’échantillonnage par incertitude. 🎯
+- Meilleurs extracteurs: ResNet/ViT pré-entraînés pour des embeddings plus discriminants. 🧠
 
 #### Défis restants
 
-- Robustesse aux outliers et au décalage de domaine.
-- Équité et biais en santé (distribution des classes, démographie).
-- Évaluation fiable quand les labels sont rares (protocoles d’annotation).
+- Robustesse aux outliers et au décalage de domaine. 🛡️
+- Équité et biais en santé (distribution des classes, démographie). ⚖️
+- Évaluation fiable quand les labels sont rares (protocoles d’annotation). 📏
 
 #### Perspectives
 
-- Intégration de l’auto-supervisé (SimCLR/BYOL) au SSL.
-- Few-shot et méta-apprentissage pour données rares.
-- Pipelines hybrides: graphes + consistance + pseudo-labels.
+- Intégration de l’auto-supervisé (SimCLR/BYOL) au SSL. 🔗
+- Few-shot et méta-apprentissage pour données rares. 🧭
+- Pipelines hybrides: graphes + consistance + pseudo-labels. 🧬
 
 #### En résumé 
-
-* Le SSL est un ensemble de techniques complémentaires.
-* La qualité des embeddings et la calibration sont déterminantes.
-* Optez pour une évaluation rigoureuse et des seuils prudents avant déploiement.
-
-*Vous avez désormais les bases pour appliquer le SSL à vos propres données et aller plus loin avec des méthodes avancées !*
