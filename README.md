@@ -40,7 +40,7 @@ Note: Certains notebooks peuvent télécharger automatiquement des petits jeux d
 - Bibliothèques usuelles: NumPy, pandas, scikit-learn, matplotlib/seaborn
 - Deep learning: PyTorch ou TensorFlow selon les notebooks (la majorité est orientée PyTorch)
 
-S'il n'y a pas de `requirements.txt`, installez au besoin depuis les erreurs import (les notebooks rappellent généralement les dépendances).
+Installez les modules via le `requirements.txt`.
 
 ---
 
@@ -52,7 +52,7 @@ Option 1 — Environnement virtuel minimal:
 python -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
-pip install jupyter numpy pandas scikit-learn matplotlib seaborn torch torchvision torchaudio
+pip install -r requirements.txt
 ```
 
 Option 2 — Conda:
@@ -60,7 +60,7 @@ Option 2 — Conda:
 ```bash
 conda create -n ssl python=3.10 -y
 conda activate ssl
-pip install jupyter numpy pandas scikit-learn matplotlib seaborn torch torchvision torchaudio
+pip install -r requirements.txt
 ```
 
 ---
