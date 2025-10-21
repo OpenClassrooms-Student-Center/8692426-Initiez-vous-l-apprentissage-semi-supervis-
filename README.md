@@ -82,12 +82,11 @@ Astuce: si un import échoue, installez le paquet manquant avec `pip install <pa
 
 ## Parcours d'apprentissage conseillé 🗺️
 
-1. `ssl_notebook.ipynb` — Comprendre les motivations et le pipeline général.
+1. Pseudo-labeling — Auto-enseignement sur données non-labelisées.
 2. Graph-based SSL — Propagation de labels.
-3. Consistency regularization — Perturbations et objectifs de stabilité.
-4. Pseudo-labeling — Auto-enseignement sur données non-labelisées.
+3. GANs semi-supervisés.
+4. Consistency regularization — Perturbations et objectifs de stabilité.
 5. Méthodes avancées — MixMatch, FixMatch, FlexMatch.
-6. Bonus — GANs semi-supervisés.
 
 Vous pouvez ensuite revenir sur vos jeux de données et adapter les techniques vues pour vos projets.
 
@@ -108,17 +107,6 @@ Vous pouvez ensuite revenir sur vos jeux de données et adapter les techniques v
 - Problèmes CUDA/GPU: commencez en CPU en retirant `.to(device)`/`cuda()` ou en forçant `device='cpu'`.
 - ImportError: installez le paquet manquant. Vérifiez les versions de PyTorch compatibles avec votre CUDA.
 - Mémoire insuffisante: réduisez la taille des batchs et/ou les dimensions des images.
-
----
-
-## Ressources pour aller plus loin 📖
-
-- MixMatch: Beyond Empirical Risk Minimization (Berthelot et al., 2019)
-- FixMatch: Simplifying Semi-Supervised Learning with Consistency and Confidence (Sohn et al., 2020)
-- FlexMatch: Boosting Semi-Supervised Learning with Curriculum Pseudo Labeling (Zhang et al., 2021)
-- Semi-Supervised Learning (Chapelle, Scholkopf, Zien) — le classique
-
-Ces références complètent les intuitions développées dans les notebooks.
 
 ---
 
